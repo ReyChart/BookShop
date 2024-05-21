@@ -1,0 +1,67 @@
+@import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
+
+.banner {
+  &.banner_purple {
+    @include banner;
+    width: 149px;
+    height: 204px;
+    padding: 92px 20px 20px 20px;
+    background-color: $dote-color;
+    top: 79px;
+    right: -86px;
+
+    @include tabletLarge {
+      top: 10px;
+    }
+
+    @include tabletSmall {
+      top: 0px;
+      right: 40px;
+    }
+
+    @include mobileLarge {
+      top: 20px;
+      padding-top: 20px;
+      max-height: 150px;
+    }
+
+    @include mobileSmall {
+      display: none;
+    }
+  }
+
+  &.banner_pink {
+    @include banner;
+    width: 137px;
+    height: 273px;
+    padding: 139px 47px 20px 21px;
+    background-color: $banner-pink;
+    bottom: 70px;
+    right: -160px;
+
+    @include tabletLarge {
+      bottom: 45px;
+      right: -120px;
+    }
+
+    @include tabletSmall {
+      bottom: 30px;
+      right: 10px;
+    }
+
+    @include mobileLarge {
+      bottom: 40px;
+      max-height: 150px;
+      padding-top: 20px;
+    }
+
+    @include mobileSmall {
+      display: none;
+    }
+  }
+
+  > img {
+    max-width: 50px;
+  }
+}

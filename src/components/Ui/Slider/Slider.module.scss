@@ -1,0 +1,37 @@
+@import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
+
+.slider_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+
+  > .dote_wrapper {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    gap: 10px;
+
+    > button {
+      width: 12px;
+      height: 12px;
+      background-color: $dote-bg-color;
+      border-radius: 50%;
+      transition: background-color 0.4s ease-in-out;
+
+      @include mobileMedium {
+        width: 8px;
+        height: 8px;
+      }
+
+      &:hover {
+        background-color: $dote-color;
+      }
+
+      &.active {
+        pointer-events: none;
+        background-color: $dote-color;
+      }
+    }
+  }
+}

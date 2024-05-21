@@ -1,0 +1,19 @@
+@import '@/styles/_variables.scss';
+
+.user_actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 95px;
+
+  > button {
+    position: relative;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  > button:hover {
+    transform: scale(1.2);
+    transition: transform 0.4s ease-in-out;
+  }
+}

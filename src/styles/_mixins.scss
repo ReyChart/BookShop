@@ -1,0 +1,56 @@
+@mixin notebook {
+  @media all and (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin netbook {
+  @media all and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tabletLarge {
+  @media all and (max-width: 1063px) {
+    @content;
+  }
+}
+
+@mixin tabletSmall {
+  @media all and (max-width: 940px) {
+    @content;
+  }
+}
+
+@mixin mobileLarge {
+  @media all and (max-width: 807px) {
+    @content;
+  }
+}
+
+@mixin mobileMedium {
+  @media all and (max-width: 704px) {
+    @content;
+  }
+}
+
+@mixin mobileSmall {
+  @media all and (max-width: 580px) {
+    @content;
+  }
+}
+
+@mixin banner {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 18px;
+  line-height: 22px;
+  color: $black-color;
+  box-shadow: $banner-shadow;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}

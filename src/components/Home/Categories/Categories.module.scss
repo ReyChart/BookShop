@@ -1,0 +1,85 @@
+@import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
+
+.categories {
+  width: 258px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -45px;
+    left: -100vw;
+    right: 864px;
+    height: 710px;
+    background-color: $dote-bg-color;
+    z-index: -1;
+
+    @include tabletLarge {
+      right: 700px;
+    }
+
+    @include tabletSmall {
+      right: 550px;
+    }
+
+    @include mobileLarge {
+      right: 400px;
+    }
+
+    @include mobileMedium {
+      right: 300px;
+    }
+
+    @include mobileSmall {
+      right: 250px;
+    }
+  }
+
+  > ul {
+    > li {
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 23px;
+      cursor: pointer;
+
+      @include tabletLarge {
+        padding-left: 20px;
+      }
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+
+      &.active {
+        position: relative;
+        font-size: 16px;
+        font-weight: 700;
+        color: $black-color;
+        list-style-type: none;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: -16px;
+          display: block;
+          background-color: $choose-color;
+          transform: translateY(-50%);
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+
+          @include netbook {
+            width: 0;
+            height: 0;
+          }
+        }
+      }
+
+      > a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+}

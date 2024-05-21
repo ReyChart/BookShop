@@ -2,6 +2,7 @@ import { NextPage } from 'next';
 import Layout from '@/components/Layout/Layout';
 import Slider from '@/components/Ui/Slider/Slider';
 import Banners from '@/components/Home/Banners/Banners';
+import Categories from '@/components/Home/Categories/Categories';
 
 import styles from './page.module.scss';
 
@@ -13,7 +14,9 @@ const Home: NextPage = () => {
           <Slider />
           <Banners />
         </section>
-        <section className={styles.books}></section>
+        <section className={styles.books}>
+          <Categories />
+        </section>
       </div>
     </Layout>
   );

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
 export const useSlider = (imageData: string[]) => {
-  const [activeSlideElm, setActiveSlideElm] = useState(0);
+  const [activeSlideElm, setActiveSlideElm] = useState<number>(0);
 
   const handleDotsClick = (index: number) => {
     setActiveSlideElm(index);

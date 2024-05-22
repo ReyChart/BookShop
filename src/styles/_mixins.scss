@@ -54,3 +54,8 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+@mixin bookInfo {
+  font-family: $additional-font;
+  font-weight: 500;
+}

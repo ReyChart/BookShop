@@ -1,0 +1,77 @@
+@import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
+
+.book_card {
+  width: 424px;
+  display: flex;
+  gap: 36px;
+
+  @include mobileSmall {
+    max-width: 212px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  > .book_cover {
+    object-fit: cover;
+    box-shadow: $banner-shadow;
+  }
+
+  .book_info {
+    padding-top: 49px;
+
+    @include mobileSmall {
+      padding-top: 0;
+    }
+
+    > p:first-child {
+      @include bookInfo;
+      margin-bottom: 4px;
+    }
+
+    > h3 {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 20px;
+      color: $black-color;
+    }
+
+    > .book_rating {
+      display: flex;
+      align-items: center;
+
+      > .full_star {
+        color: $full-star;
+        font-size: 12px;
+      }
+
+      > .empty_star {
+        color: $empty-star;
+        font-size: 12px;
+      }
+
+      > .book_reviews {
+        font-weight: 500;
+        color: $gray-color;
+        margin-left: 6px;
+      }
+    }
+
+    > .book_description {
+      @include bookInfo;
+      margin-top: 16px;
+    }
+
+    > .book_price {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 16px;
+      color: $black-color;
+      margin-top: 16px;
+    }
+
+    > button {
+      margin-top: 16px;
+    }
+  }
+}

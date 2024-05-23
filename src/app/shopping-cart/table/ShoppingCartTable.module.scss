@@ -1,0 +1,94 @@
+@import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
+
+.table {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 19px;
+  margin-bottom: 117px;
+
+  > .column {
+    > h4 {
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    > .row {
+      display: flex;
+      align-items: center;
+      margin-top: 30px;
+      height: 145px;
+
+      > .items {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+
+        > img {
+          max-width: 102px;
+          height: 145px;
+          box-shadow: $banner-shadow;
+        }
+
+        > div {
+          width: 200px;
+
+          > h3 {
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 700;
+            color: $black-color;
+            margin-bottom: 8px;
+          }
+
+          > p {
+            font-family: $additional-font;
+            margin-bottom: 11px;
+          }
+        }
+      }
+
+      > .quantity {
+        width: 176px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid $border-color;
+        padding: 0 15px;
+
+        > button {
+          width: 22px;
+          height: 24px;
+
+          &.minus {
+            background: url('/minus.svg') center no-repeat;
+          }
+
+          &.plus {
+            background: url('/plus.svg') center no-repeat;
+          }
+        }
+
+        > span {
+          font-size: 16px;
+          line-height: 19px;
+          font-weight: 700;
+        }
+      }
+
+      > .price {
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 700;
+        color: $black-color;
+      }
+
+      > .delivery {
+        font-size: 12px;
+        line-height: 15px;
+        font-weight: 700;
+      }
+    }
+  }
+}

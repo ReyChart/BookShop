@@ -1,7 +1,7 @@
 'use client';
 
-import { FunctionComponent, useState } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import { FunctionComponent, useState, useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import UserAction from './UserAction/UserAction';
 import Link from 'next/link';
 import clsx from 'clsx';
@@ -13,7 +13,9 @@ const navItems = ['books', 'audiobooks', 'stationery & gifts', 'blog'];
 const Header: FunctionComponent = () => {
   const [isNavActive, setIsNavActive] = useState<boolean>(false);
   const [activeNavItem, setActiveNavItem] = useState<string>('books');
-  const [isLogoDisabled, setLogoDisabled] = useState<boolean>(true);
+  const [LogoDisabled, setLogoDisabled] = useState<boolean>(true);
+
+  const pathname = usePathname();
 
   const handleLogoClick = () => {
     setActiveNavItem('books');
@@ -22,12 +24,19 @@ const Header: FunctionComponent = () => {
 
   const handleNavLinkClick = (navItem: string) => {
     setActiveNavItem(navItem);
-    navItem === 'books' ? setLogoDisabled(true) : setLogoDisabled(false);
+    setLogoDisabled(navItem === 'books');
   };
 
   const toggleBurgerMenu = () => {
     setIsNavActive(!isNavActive);
   };
+
+  useEffect(() => {
+    if (pathname === '/shopping-cart' || pathname === '/profile') {
+      setLogoDisabled(false);
+      setActiveNavItem('');
+    }
+  }, [pathname]);
 
   return (
     <header>
@@ -36,7 +45,7 @@ const Header: FunctionComponent = () => {
           <Link
             href="/"
             className={clsx(styles.header_logo, {
-              [styles.disabled]: isLogoDisabled,
+              [styles.disabled]: LogoDisabled,
             })}
             onClick={handleLogoClick}
           >
@@ -47,7 +56,7 @@ const Header: FunctionComponent = () => {
               {navItems.map((navItem) => (
                 <li key={navItem}>
                   <Link
-                    href={navItem !== 'books' ? `#${navItem}` : '/'}
+                    href={navItem !== 'books' ? `/#${navItem}` : '/'}
                     className={clsx(styles.nav_link, {
                       [styles.active]: activeNavItem === navItem,
                     })}

@@ -1,0 +1,17 @@
+@import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
+
+.shopping_cart {
+  margin-top: 87px;
+
+  > h1 {
+    @include heading;
+  }
+
+  > div {
+    > h2 {
+      @include heading;
+      margin-bottom: 19px;
+    }
+  }
+}

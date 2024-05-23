@@ -36,27 +36,6 @@
       color: $black-color;
     }
 
-    > .book_rating {
-      display: flex;
-      align-items: center;
-
-      > .full_star {
-        color: $full-star;
-        font-size: 12px;
-      }
-
-      > .empty_star {
-        color: $empty-star;
-        font-size: 12px;
-      }
-
-      > .book_reviews {
-        font-weight: 500;
-        color: $gray-color;
-        margin-left: 6px;
-      }
-    }
-
     > .book_description {
       @include bookInfo;
       margin-top: 16px;

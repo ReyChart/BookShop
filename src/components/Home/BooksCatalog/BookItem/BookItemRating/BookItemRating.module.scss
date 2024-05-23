@@ -1,0 +1,17 @@
+@import '@/styles/_variables.scss';
+
+.book_rating {
+  display: flex;
+  align-items: center;
+
+  > .stars {
+    line-height: 0;
+  }
+
+  > .reviews {
+    font-family: $additional-font;
+    font-weight: 500;
+    color: $gray-color;
+    margin-left: 6px;
+  }
+}

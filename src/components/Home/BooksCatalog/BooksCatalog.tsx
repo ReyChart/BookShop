@@ -23,7 +23,9 @@ const BooksCatalog: FunctionComponent = () => {
       </div>
       {booksCount < maxBooks && (
         <div className={styles.btn_load}>
-          <Button onClick={handleLoadMore}>Load More</Button>
+          <Button variant="cart" onClick={handleLoadMore}>
+            Load More
+          </Button>
         </div>
       )}
     </div>

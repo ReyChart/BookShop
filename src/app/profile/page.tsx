@@ -31,7 +31,7 @@ const Profile: NextPage = () => {
                       <h2>Your Email</h2>
                       <p>reycharton@gmail.com</p>
                     </div>
-                    <Button>Edit profile</Button>
+                    <Button variant="cart">Edit profile</Button>
                   </div>
                 </div>
               </div>

@@ -24,7 +24,7 @@ const BookItem: FunctionComponent = () => {
           content.
         </p>
         <div className={styles.book_price}>$19.99</div>
-        <Button>Buy now</Button>
+        <Button variant="cart">Buy now</Button>
       </div>
     </div>
   );

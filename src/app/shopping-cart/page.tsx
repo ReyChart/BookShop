@@ -15,7 +15,7 @@ const ShoppingCart: NextPage = () => {
             <ShoppingCartTable />
             <div>
               <h2>Total price: 30.58$</h2>
-              <Button>Checkout</Button>
+              <Button variant="cart">Checkout</Button>
             </div>
           </section>
         </div>

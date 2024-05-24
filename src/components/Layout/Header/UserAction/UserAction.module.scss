@@ -1,4 +1,5 @@
 @import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
 
 .user_actions {
   display: flex;
@@ -6,14 +7,43 @@
   align-items: center;
   gap: 95px;
 
-  > button {
+  > .auth {
     position: relative;
-    background: transparent;
-    cursor: pointer;
+    line-height: 0;
+
+    > button {
+      @include button;
+
+      &:hover {
+        @include actionBtnHover;
+      }
+
+      > img {
+        width: 14px;
+        height: 17px;
+      }
+    }
   }
 
-  > button:hover {
-    transform: scale(1.2);
-    transition: transform 0.4s ease-in-out;
+  > button {
+    @include button;
+    position: relative;
+
+    &:hover {
+      @include actionBtnHover;
+    }
+
+    > .counter {
+      position: absolute;
+      bottom: -5px;
+      right: -4px;
+      z-index: 1;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background-color: $validate;
+      font-weight: 500;
+      color: $white-color;
+    }
   }
 }

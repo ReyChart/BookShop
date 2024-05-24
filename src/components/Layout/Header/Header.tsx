@@ -1,6 +1,6 @@
 'use client';
 
-import { FunctionComponent, useState, useEffect, useRef } from 'react';
+import { FunctionComponent, useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import UserAction from './UserAction/UserAction';
 import Link from 'next/link';

@@ -40,6 +40,16 @@
   }
 }
 
+@mixin button {
+  background: transparent;
+  cursor: pointer;
+}
+
+@mixin actionBtnHover {
+  transform: scale(1.2);
+  transition: transform 0.4s ease-in-out;
+}
+
 @mixin banner {
   position: absolute;
   display: flex;
@@ -68,16 +78,10 @@
   color: $black-color;
 }
 
-@mixin profileHeadingData {
+@mixin headingData {
   font-size: 12px;
   font-weight: 700;
   line-height: 15px;
   text-transform: uppercase;
   color: $black-color;
-}
-
-@mixin profileTextInfo {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 29px;
 }

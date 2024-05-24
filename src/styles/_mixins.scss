@@ -67,3 +67,17 @@
   text-transform: uppercase;
   color: $black-color;
 }
+
+@mixin profileHeadingData {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $black-color;
+}
+
+@mixin profileTextInfo {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+}

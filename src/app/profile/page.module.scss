@@ -1,0 +1,72 @@
+@import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
+
+.profile {
+  padding: 87px 0 102px;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+
+    > .profile_info {
+      width: 45%;
+
+      > h1 {
+        @include heading;
+        margin-bottom: 12px;
+      }
+
+      > div {
+        display: flex;
+        gap: 20px;
+
+        > img {
+          width: 100%;
+          max-width: 235px;
+          height: 235px;
+        }
+
+        > div {
+          color: $black-color;
+
+          .name {
+            margin-bottom: 25px;
+          }
+
+          h2 {
+            @include profileHeadingData;
+            margin-bottom: 8px;
+          }
+
+          p {
+            @include profileTextInfo;
+          }
+
+          > button {
+            margin-top: 40px;
+          }
+        }
+      }
+    }
+
+    .profile_about {
+      width: 100%;
+      max-width: 353px;
+      height: 345px;
+      padding: 20px 30px;
+      background-color: $banner-light-pink;
+      box-shadow: $banner-shadow;
+
+      > h2 {
+        @include profileHeadingData;
+        text-align: center;
+        margin-bottom: 29px;
+      }
+
+      > p {
+        font-size: 12px;
+        font-weight: 600;
+      }
+    }
+  }
+}

@@ -1,32 +1,84 @@
 'use client';
 
-import { FunctionComponent, useState } from 'react';
+import { Fragment, FunctionComponent, useState, useEffect, useMemo } from 'react';
+import { useSelector } from 'react-redux';
+
+import { store } from '@/store/store';
+import { getBooks } from '@/store/books/books.actions';
+import { selectBooks, selectCategories, selectIsLoading } from '@/hooks/useSelect';
+
 import BookItem from './BookItem/BookItem';
 import Button from '@/components/Ui/Button/Button';
+import SkeletonLoader from '@/components/Ui/Skeleton/SkeletonLoader';
 
 import styles from './BooksCatalog.module.scss';
 
-const BooksCatalog: FunctionComponent = () => {
-  const [booksCount, setBooksCount] = useState<number>(6);
-  const maxBooks = 36;
+interface IAmountBooksProps {
+  pageIndex: number;
+  maxResults: number;
+}
 
-  const handleLoadMore = () => {
-    setBooksCount((prevCount) => Math.min(prevCount + 6, maxBooks));
-  };
+const BooksCatalog: FunctionComponent = () => {
+  const { categories } = useSelector(selectCategories);
+  const isLoading = useSelector(selectIsLoading);
+  const books = useSelector(selectBooks);
+
+  const limitItems = 36;
+  const amountNewItems = 6;
+  const initValueAmountBooks = useMemo<IAmountBooksProps>(
+    () => ({
+      pageIndex: 0,
+      maxResults: 6,
+    }),
+    []
+  );
+
+  const [amountBooks, setAmountBooks] = useState<IAmountBooksProps>(initValueAmountBooks);
+
+  useEffect(() => {
+    amountBooks.maxResults < limitItems && store.dispatch(getBooks({ categories, ...amountBooks }));
+  }, [categories, amountBooks]);
+
+  useEffect(() => {
+    setAmountBooks(initValueAmountBooks);
+  }, [categories, initValueAmountBooks]);
 
   return (
     <div className={styles.books_catalog}>
       <div className={styles.books_list}>
-        {Array.from({ length: booksCount }).map((_, index) => (
-          <BookItem key={index} />
+        {books?.map((book, index) => (
+          <Fragment key={index}>
+            {isLoading && index >= amountBooks.pageIndex && index < amountBooks.maxResults ? (
+              <SkeletonLoader className={styles.skeleton} inline count={1} height={307} />
+            ) : (
+              <BookItem book={book} />
+            )}
+          </Fragment>
         ))}
       </div>
-      {booksCount < maxBooks && (
+      {amountBooks.maxResults < limitItems && !isLoading ? (
         <div className={styles.btn_load}>
-          <Button variant="cart" onClick={handleLoadMore}>
-            Load More
+          <Button
+            variant="cart"
+            onClick={() =>
+              setAmountBooks((prev) => ({
+                pageIndex: prev.pageIndex + amountNewItems,
+                maxResults: prev.maxResults + amountNewItems,
+              }))
+            }
+            disabled={isLoading}
+          >
+            Load more
           </Button>
         </div>
+      ) : amountBooks.maxResults < limitItems && isLoading ? (
+        <div>
+          {[...Array(6)].map((_, index) => (
+            <SkeletonLoader key={index} className={styles.skeleton} inline count={1} height={307} />
+          ))}
+        </div>
+      ) : (
+        ''
       )}
     </div>
   );

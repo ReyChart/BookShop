@@ -33,10 +33,14 @@
       @include actionBtnHover;
     }
 
+    > img {
+      padding-right: 5px;
+    }
+
     > .counter {
       position: absolute;
       bottom: -5px;
-      right: -4px;
+      right: 0;
       z-index: 1;
       width: 13px;
       height: 13px;

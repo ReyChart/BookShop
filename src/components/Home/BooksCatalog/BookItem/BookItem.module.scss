@@ -13,6 +13,8 @@
   }
 
   > .book_cover {
+    min-width: 212px;
+    height: 307px;
     object-fit: cover;
     box-shadow: $banner-shadow;
   }

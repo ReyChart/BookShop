@@ -1,10 +1,12 @@
 import { FunctionComponent } from 'react';
+
 import styles from './BookItemRating.module.scss';
 
-const BookItemRating: FunctionComponent = () => {
-  const rating = 4.3;
+const BookItemRating: FunctionComponent<{ rating: number; reviews: number }> = ({
+  rating,
+  reviews,
+}) => {
   const roundedRating = Math.round(rating);
-  const reviews = '333 reviews';
 
   return (
     <div className={styles.book_rating}>
@@ -25,7 +27,7 @@ const BookItemRating: FunctionComponent = () => {
           </svg>
         ))}
       </div>
-      <div className={styles.reviews}>{reviews}</div>
+      <div className={styles.reviews}>{reviews} reviews</div>
     </div>
   );
 };

@@ -5,7 +5,6 @@
   flex-direction: column;
   align-items: center;
   gap: 96px;
-  padding-bottom: 74px;
 
   @include mobileSmall {
     gap: 50px;
@@ -33,5 +32,10 @@
 
   > .btn_load {
     justify-content: center;
+  }
+
+  .skeleton {
+    width: 424px;
+    height: 307px;
   }
 }

@@ -1,8 +1,7 @@
 import { FunctionComponent } from 'react';
-import { useRouter } from 'next/navigation';
+import { useAuth } from './useAuth';
 import Button from '../Button/Button';
 import Field from '../Field/Field';
-import { useAuth } from './useAuth';
 
 import styles from './Auth.module.scss';
 
@@ -13,28 +12,32 @@ interface IAuthProps {
 const fields = ['email', 'password'];
 
 const Auth: FunctionComponent<IAuthProps> = ({ title }) => {
-  const { fieldsValue, handleChangeField, handleSubmit } = useAuth();
-  const router = useRouter();
-
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    handleSubmit(e);
-    router.push('/profile');
-  };
+  const { fieldsValue, validate, handleChangeField, handleSubmit } = useAuth();
 
   return (
     <div className={styles.auth}>
       <h3>{title}</h3>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={(e) => handleSubmit(e)}>
         {fields.map((field) => (
           <label key={field} className={styles[field]}>
             {field}
             <Field
               type={field === 'email' ? 'email' : 'password'}
-              name={field}
+              name={field === 'email' ? 'email' : 'password'}
               value={fieldsValue.find((fieldValue) => fieldValue.label === field)?.value || ''}
               placeholder={field === 'email' ? 'Email...' : 'Password...'}
+              isValidate={validate === field || validate === 'all'}
               onInput={(e) => handleChangeField(e, field)}
             />
+            {validate && (
+              <div>
+                {validate === 'all' || (field === 'email' && validate === 'email')
+                  ? 'Email or password incorrect'
+                  : field === 'password' && validate === 'password'
+                  ? 'Your password must be at least 6 characters long'
+                  : ''}
+              </div>
+            )}
           </label>
         ))}
         <Button variant="auth">Log in</Button>

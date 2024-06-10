@@ -1,4 +1,5 @@
 import { FunctionComponent, FieldsetHTMLAttributes } from 'react';
+import clsx from 'clsx';
 
 import styles from './Field.module.scss';
 
@@ -7,10 +8,18 @@ interface IFieldProps extends FieldsetHTMLAttributes<HTMLInputElement> {
   value: string;
   name: string;
   placeholder: string;
+  isValidate: boolean;
   onInput: (e: React.FormEvent<HTMLInputElement>) => void;
 }
 
-const Field: FunctionComponent<IFieldProps> = ({ type, name, value, placeholder, onInput }) => {
+const Field: FunctionComponent<IFieldProps> = ({
+  type,
+  name,
+  value,
+  placeholder,
+  isValidate,
+  onInput,
+}) => {
   return (
     <input
       type={type}
@@ -18,7 +27,9 @@ const Field: FunctionComponent<IFieldProps> = ({ type, name, value, placeholder,
       value={value}
       placeholder={placeholder}
       onInput={onInput}
-      className={styles.field}
+      className={clsx(styles.field, {
+        [styles.validate]: isValidate,
+      })}
     />
   );
 };

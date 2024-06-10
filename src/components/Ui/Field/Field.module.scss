@@ -8,4 +8,9 @@
   &::placeholder {
     opacity: 0.7;
   }
+
+  &.validate {
+    color: $validate;
+    border-color: $validate;
+  }
 }

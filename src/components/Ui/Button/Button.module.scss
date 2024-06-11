@@ -4,16 +4,21 @@
 .btn {
   @include button;
   width: 176px;
+  padding: 18px 0;
+  font-size: 8px;
+  line-height: 10px;
   font-weight: 700;
+  color: $btn-color;
+  border: 1px solid $btn-color;
   text-transform: uppercase;
 
   &.auth {
-    height: 32px;
+    padding: 8px 0;
     font-size: 14px;
     line-height: 17px;
+    color: $white-color;
     background-color: $dote-color;
     border: none;
-    color: $white-color;
     transition: opacity 0.4s ease-in-out;
 
     &:hover {
@@ -22,10 +27,11 @@
   }
 
   &.cart {
-    height: 45px;
-    font-size: 8px;
-    line-height: 10px;
-    color: $btn-color;
-    border: 1px solid $btn-color;
+    color: $gray-color;
+    border-color: $border-color;
+  }
+
+  &:disabled {
+    pointer-events: none;
   }
 }

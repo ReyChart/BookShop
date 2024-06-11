@@ -19,7 +19,7 @@ const ShoppingCartTable: FunctionComponent = () => {
                 <div>
                   <h3>Book Title</h3>
                   <p>Author Name</p>
-                  <BookItemRating />
+                  <BookItemRating rating={4.3} reviews={333} />
                 </div>
               </div>
             )}

@@ -3,7 +3,7 @@
 import { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useSelector } from 'react-redux';
-import { selectUser } from '@/hooks/useSelect';
+import { selectShoppingCartBooks, selectUser } from '@/hooks/useSelect';
 import { useAction } from '@/hooks/useAction';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -14,6 +14,7 @@ import styles from './UserAction.module.scss';
 const userActionsProfile = ['Profile', 'Log out'];
 
 const UserAction: FunctionComponent = () => {
+  const shoppingCartBooks = useSelector(selectShoppingCartBooks);
   const { isLogin } = useSelector(selectUser);
   const { LOGOUT } = useAction();
   const [isShowAuth, setIsShowAuth] = useState<boolean>(false);
@@ -65,7 +66,11 @@ const UserAction: FunctionComponent = () => {
       </div>
       <button onClick={() => push('/shopping-cart')}>
         <Image src="/iconShop.svg" alt="shop-bag" width={14} height={17} />
-        <span className={styles.counter}>0</span>
+        {shoppingCartBooks.length ? (
+          <span className={styles.counter}>{shoppingCartBooks.length}</span>
+        ) : (
+          ''
+        )}
       </button>
     </div>
   );

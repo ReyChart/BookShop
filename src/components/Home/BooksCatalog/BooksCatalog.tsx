@@ -59,7 +59,6 @@ const BooksCatalog: FunctionComponent = () => {
       {amountBooks.maxResults < limitItems && !isLoading ? (
         <div className={styles.btn_load}>
           <Button
-            variant="cart"
             onClick={() =>
               setAmountBooks((prev) => ({
                 pageIndex: prev.pageIndex + amountNewItems,

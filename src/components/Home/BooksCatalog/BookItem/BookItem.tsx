@@ -26,17 +26,17 @@ const BookItem: FunctionComponent<{ book: IBooksDataProps }> = ({ book }) => {
       : (ADD_BOOK_CART(book), setIsCartBook(true));
   };
 
-  // useEffect(() => {
-  //   if (
-  //     shoppingCartBooks.filter(
-  //       (cartBook) =>
-  //         cartBook.volumeInfo.title === book.volumeInfo.title &&
-  //         cartBook.volumeInfo.authors[0] === book.volumeInfo.authors[0]
-  //     ).length
-  //   ) {
-  //     setIsCartBook(true);
-  //   }
-  // }, [shoppingCartBooks, book]);
+  useEffect(() => {
+    if (
+      shoppingCartBooks.filter(
+        (cartBook) =>
+          cartBook.volumeInfo.title === book.volumeInfo.title &&
+          cartBook.volumeInfo.authors[0] === book.volumeInfo.authors[0]
+      ).length
+    ) {
+      setIsCartBook(true);
+    }
+  }, [shoppingCartBooks, book]);
 
   return (
     <div className={styles.book_card}>

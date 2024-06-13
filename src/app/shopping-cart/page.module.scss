@@ -2,7 +2,7 @@
 @import '@/styles/_mixins.scss';
 
 .shopping_cart {
-  padding-top: 87px;
+  padding: 87px 0 40px;
 
   > h1 {
     @include heading;

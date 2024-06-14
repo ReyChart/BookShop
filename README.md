@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BookShop
 
-## Getting Started
+### Описание
+Книжный магазин на **Next.js** с использованием **Google Books API**.
 
-First, run the development server:
+### Инструменты
+- React + Typescript
+- Next.js
+- Redux Toolkit
+- SCSS
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Как запустить проект
+- Клонируем репозиторий на локальный ПК (```git clone https://github.com/ReyChart/BookShop.git```)
+- Устанавливаем пакеты с помощью **yarn**
+- Запускаем проект с помощью **yarn dev** (автоматически открывается http://localhost:3000)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Также, был произведен Deploy проекта с помощью Vercel. Для визуальной оценки проекта, можно воспользоваться ссылкой https://book-shop-h3x940ekb-grimes-projects.vercel.app
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Дополнительно
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![bookShopMain](https://github.com/ReyChart/BookShop/assets/126756819/18669836-e9b6-4b0a-97b5-12f85ee0b390)
 
-## Learn More
+![bookShopProfile](https://github.com/ReyChart/BookShop/assets/126756819/cfbb8088-4db7-477c-a484-662058d939ab)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![bookShopCart](https://github.com/ReyChart/BookShop/assets/126756819/cfa91120-fc10-4a66-97a1-2859852fc840)

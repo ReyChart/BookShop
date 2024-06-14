@@ -104,20 +104,20 @@
       > .row {
         > .items {
           > img {
-            box-shadow: 0 0 10px rgba(#35315447, 0.5);
+            box-shadow: 0 0 10px #35315447;
           }
 
           > div {
             width: 260px;
           }
+        }
 
-          > .quantity {
-            flex-direction: column;
-            width: max-content;
-            height: max-content;
-            padding: 10px;
-            gap: 15px;
-          }
+        > .quantity {
+          flex-direction: column;
+          width: max-content;
+          height: max-content;
+          padding: 10px;
+          gap: 15px;
         }
       }
     }

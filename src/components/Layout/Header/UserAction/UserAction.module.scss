@@ -7,6 +7,10 @@
   align-items: center;
   gap: 95px;
 
+  @include mobileSmall {
+    gap: 60px;
+  }
+
   > .auth {
     position: relative;
     line-height: 0;

@@ -4,6 +4,10 @@
 .shopping_cart {
   padding: 87px 0 40px;
 
+  @include mobileSmall {
+    padding-top: 60px;
+  }
+
   > h1 {
     @include heading;
   }

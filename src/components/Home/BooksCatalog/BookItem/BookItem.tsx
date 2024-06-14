@@ -55,7 +55,7 @@ const BookItem: FunctionComponent<{ book: IBooksDataProps }> = ({ book }) => {
           {description ? `${description.substring(0, 90)}...` : 'No description available'}
         </p>
         <div className={styles.book_price}>
-          {retailPrice ? `${currency(retailPrice.amount)}` : 'Price not available'}
+          {retailPrice ? `${currency(retailPrice.amount)}` : 'No price'}
         </div>
         <Button
           disabled={isLogin ? false : true}

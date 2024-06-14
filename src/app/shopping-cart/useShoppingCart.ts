@@ -14,7 +14,7 @@ export const useShoppingCart = (bookData: IBooksDataProps[]) => {
     bookData.map((book) => ({
       ...book,
       quantity: 1,
-      bookPrice: book.saleInfo.retailPrice?.amount || 'Price not available',
+      bookPrice: book.saleInfo.retailPrice?.amount || 'No price',
     }))
   );
   const [totalPrice, setTotalPrice] = useState<number>(
@@ -52,7 +52,7 @@ export const useShoppingCart = (bookData: IBooksDataProps[]) => {
             item.bookPrice =
               item.saleInfo.retailPrice?.amount !== undefined
                 ? (item.saleInfo.retailPrice.amount || 0) * item.quantity
-                : 'Price not available';
+                : 'No price';
           }
           return item;
         });

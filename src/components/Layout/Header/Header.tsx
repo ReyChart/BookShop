@@ -6,7 +6,7 @@ import UserAction from './UserAction/UserAction';
 import Link from 'next/link';
 import clsx from 'clsx';
 
-import styles from './header.module.scss';
+import styles from './Header.module.scss';
 
 const navItems = ['books', 'audiobooks', 'stationery & gifts', 'blog'];
 

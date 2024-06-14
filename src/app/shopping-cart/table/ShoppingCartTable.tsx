@@ -66,9 +66,7 @@ const ShoppingCartTable: FunctionComponent<IShoppingCartTableProps> = ({
               )}
               {title === 'price' && (
                 <p className={styles.price}>
-                  {book.saleInfo.retailPrice?.amount
-                    ? `${currency(book.saleInfo.retailPrice.amount)}`
-                    : 'Price not available'}
+                  {typeof book.bookPrice === 'number' ? currency(book.bookPrice) : book.bookPrice}
                 </p>
               )}
               {title === 'delivery' && <p className={styles.delivery}>Shipping: delivery</p>}

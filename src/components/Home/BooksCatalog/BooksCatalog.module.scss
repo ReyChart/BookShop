@@ -37,5 +37,9 @@
   .skeleton {
     width: 424px;
     height: 307px;
+
+    @include mobileSmall {
+      width: 230px;
+    }
   }
 }

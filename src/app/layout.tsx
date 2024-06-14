@@ -9,6 +9,11 @@ const montserrat = Montserrat({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Book shop',
   description: 'Google API BookStore',
+  icons: {
+    icon: '/bookShop.png',
+    shortcut: '/bookShop.png',
+    apple: '/bookShop.png',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
